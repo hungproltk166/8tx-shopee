@@ -6,17 +6,24 @@
 .header__navbar{
     display: flex;
     justify-content: space-between;
- 
+
 }
 .header__navbar-list{
     list-style: none;
     padding-left: 0;
+    margin-top: 4px;
+    
 }
+
 .header__navbar-list-item
 {
    margin:0 4px;
    position: relative;
+   min-height: 20px;
  
+}
+.header__navbar-list-item--has-qr:hover .header__qr {
+    display: block;
 }
 .header__navbar-list-item-link,
 .header__navbar-list-item{
@@ -25,6 +32,18 @@
  font-size: 1.4rem;
  color: var(--white-color);
  font-weight: 150;
+}
+.header__navbar-list-item-link,
+.header__navbar-list-item,
+.header__navbar-icon-link
+{
+    display: inline-flex;
+    align-items: center;
+}
+.header__navbar-list-item-link:hover,
+.header__navbar-list-item:hover{
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
 }
 .header__navbar-list-item--strong{
     font-weight: 600;
@@ -40,4 +59,63 @@
     top:50%;
     transform: translateY(-50%);
     opacity: 0.4;
+}
+.header__navbar-icon-link {
+    color: var(--white-color);
+    text-decoration: none;
+}
+.header__navbar-icon-link:hover{
+    color: rgba(255, 255, 255, 0.7);
+}
+.header__navbar-icon{
+    font-size: 1.8rem;
+    margin-left: 8px;
+}
+.header__navbar-title--no-pointer{
+    cursor: text;
+    color: var(--white-color);
+   
+}
+/* header qr code */
+.header__qr {
+    width: 220px;
+    background-color: var(--white-color);
+    position: absolute;
+    left: 0;
+    top: 130%;
+    padding: 8px;
+    border-radius: 2px;
+    display: none;
+    animation: fadein ease-in 0.8s;
+
+}
+.header__qr::before {
+    position: absolute;
+    height: 20px;
+    width: 100%;
+    content:"";
+    display: block;
+    left: 0;
+    top: -12px;
+
+}
+.header__qr-img {
+
+}
+.header_qr-apps {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__qr-download-img {
+  height: 20px;
+}
+/* 2 cachs lấy ra class giống nhau
+.header_qr-link:nth-child(n)n là thứ tự bất kì
+.header_qr-link:first-child */
+.header_qr-link:first-child {
+    margin-left: 11px;
+}
+.header_qr-link:nth-child(2) {
+margin-right: 13px;
 }
