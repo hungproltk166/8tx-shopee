@@ -21,6 +21,10 @@
    position: relative;
    min-height: 20px;
  
+   
+}
+.header__navbar-list-item--has-notify:hover .header__notify {
+    display: block;
 }
 .header__navbar-list-item--has-qr:hover .header__qr {
     display: block;
@@ -133,15 +137,42 @@ margin-right: 13px;
 /* header notification */
 .header__notify {
     position:absolute;
-    top: 118%;
+    top: 210%;
     right: 0;
     width: 404px;
     border: 1px solid #D3D3D3;
     background-color: var(--white-color);
     transform-origin: calc(100% - 20px) top ;
     animation:headerNotifyGrow ease-in 0.5s ;
- 
+    -webkit-animation:headerNotifyGrow ease-in 0.5s ;
+    -moz-animation: headerNotifyGrow ease-in 0.5s;
+    -o-animation: headerNotifyGrow ease-in 0.5s;
+    will-change: transform,opacity;
+    display: none;
 }
+.header__notify::before {
+    /* hoac su dung border-style:solid; border-width:20px 30px; tao ra hinh chu nhat => goc tu  */
+    content: "";
+    border: 20px solid;
+    border-color: transparent transparent var(--white-color) transparent;
+    position: absolute;
+    right: 12px;
+    top:-40px;
+
+}
+.header__notify::after {
+    content: "";
+    display: block;
+    width: 82px;
+    height: 40px;
+    position: absolute;
+    top:-40px;
+    right:0;
+
+
+}
+    
+ 
 .header__notify-header {
     height: 40px;
     background-color: var(--white-color);
